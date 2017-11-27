@@ -1,0 +1,33 @@
+{
+  "name": "pacman_multijoueur",
+  "version": "0.1.0",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "express": "^4.15.5",
+    "mysql": "^2.15.0",
+    "socket.io": "^2.0.4",
+    "uuid": "^3.1.0"
+  },
+  "description": "Une version multijoeur du célèbre PAC-MAN.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "start_prod": "gulp ; node dist/server.js",
+    "test": "test/test.py",
+    "watch": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git clone git@morgan22000.no-ip.org:/home/git/projet.git"
+  },
+  "author": "Morgan BALDERACCHI",
+  "private": true,
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-useref": "^3.1.2",
+    "node-minify": "^2.3.0",
+    "nodemon": "^1.12.1",
+    "run-sequence": "^2.1.0"
+  }
+}

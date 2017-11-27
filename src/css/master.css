@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+
+::-webkit-scrollbar {display: none;}
+
+h1 {
+  position: absolute;
+  z-index: 3;
+  color: rgba(255, 255, 255, 0.88);
+  font-family: 'Press Start 2P';
+  right: 50%;
+  transform: translateX(50%);
+  font-size: 95px;
+  top: -105px;
+  font-size: 96px;
+}
+
+.hud {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 30px;
+  z-index: 1;
+  display: none;
+}
+
+#life {
+  position: fixed;
+  top: 26px;
+  right: 3%;
+}
+
+#life img {
+  width: 33px;
+  margin-right: 3px;
+}
+
+#leaderboard {
+  position: fixed;
+  left: 3%;
+  max-width: 100%;
+  font-size: 16px;
+  padding: 0 10px;
+  background: rgba(30, 30, 30, 0.75);
+}
+
+#leaderboard #score span{
+  display: block;
+  font-size: 13px;
+}
+
+.party button {
+  margin-bottom: 15px;
+}
+
+.party .error {
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+
+.party {
+  position: absolute;
+  top: 50%;
+  background: #1f1f1f;
+  max-width: 280px;
+  padding: 45px;
+  text-align: center;
+  z-index: 2;
+  color: #b3b3b3;
+  font-family: 'Press Start 2P', cursive;
+  transform: translateX(50%);
+  transform: translate(65%, -46%);
+  left: 50%;
+  margin-bottom: 50px;
+}
+
+.party button {
+  margin-bottom: 15px;
+}
+
+.party .error {
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+
+#game {
+  position: fixed;
+  top: 0;
+  filter: blur(4px);
+  -webkit-transition: 0.7s -webkit-filter linear;
+  -moz-transition: 0.7s -moz-filter linear;
+  -moz-transition: 0.7s filter linear;
+  -ms-transition: 0.7s -ms-filter linear;
+  -o-transition: 0.7s -o-filter linear;
+  transition: 0.7s filter linear, 0.7s -webkit-filter linear;
+}
+
+@media all and (min-width: 1245px) {
+  .share [placeholder] { direction: rtl; text-align: right;}
+  .share ::-webkit-input-placeholder { direction: rtl; text-align: right;}
+  .share :-moz-placeholder { direction: rtl; text-align: right;}
+  .share ::-moz-placeholder { direction: rtl; text-align: right;}
+  .share :-ms-input-placeholder { direction: rtl; text-align: right;}
+}
+
+@media all and (max-width: 1245px) {
+  .party {
+    max-width: 360px;
+    position: relative;
+    transform: translate(-50%,-50%);
+    top: 50%;
+  }
+}
+
+@media all and (max-width: 865px) {
+  h1 {
+    font-size: 10vw;
+    top: -10vw;
+  }
+}
+
+@media all and (max-height: 590px){
+    .form-box {
+      top: 65px !important;
+      transform: initial !important;
+      margin-bottom: 30px !important;
+    }
+    .party {
+      top: 306px !important;
+    }
+}

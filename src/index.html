@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<!-- HELLO -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <title>Pacman multijoueur</title>
+  </head>
+  <body>
+    <!-- Connection -->
+    <div class="form-box">
+      <h1>PACMAN.io</h1>
+      <div class="pacman"></div>
+      <div id="not-log">
+        <div class="log-re">
+          <div class="error"></div>
+          <form name="register" class="register" action="javascript:void(0);">
+            <input type="text" name="pseudo" placeholder="pseudo">
+            <input type="password" name="pass" placeholder="password">
+            <input type="text" name="email" placeholder="email address">
+            <button name="submit">create</button>
+            <p class="message">Already registered? <a href="#" onclick="toggle(1);">Sign In</a></p>
+          </form>
+          <form name="login" class="login" action="javascript:void(0);">
+            <input type="text" name="pseudo" placeholder="pseudo">
+            <input type="password" name="pass" placeholder="password">
+            <button name="submit">login</button>
+            <input type="checkbox" name="stay" id="c1" checked>
+            <label for="c1">Stay login?<span></span></label>
+            <p class="message">Not registered? <a href="#" onclick="toggle(0);">Create an account</a></p>
+          </form>
+        </div>
+        <p>--- OR ---</p>
+        <form name="guest" class="guest" action="javascript:void(0);">
+          <button name="submit">play as Guess</button>
+        </form>
+      </div>
+      <div id="log">
+        <form name="play" action="javascript:void(0);">
+          <button type="button" name="submit" class="play"><img src="/images/play.png" alt=""></button>
+          <p>login as ~ <span id="player-name"></span> ~</p>
+          <p>best score: <span id="best-score"></span></p>
+          <p>last score: <span id="last-score"></span></p>
+          <button type="button" name="logout" id="logout">Logout</button>
+        </form>
+      </div>
+    </div>
+    <!-- Share/join party -->
+    <div class="party">
+      <div class="share">
+        <p>Share your party:</p>
+        <input type="text" name="party" placeholder="#" id="share">
+        <button type="button" name="copy" onclick="copyRoom()">Copy</button>
+      </div>
+      <div class="join">
+        <div class="error"></div>
+        <input type="text" name="party" placeholder="party Code" id="join">
+        <button type="button" name="join" onclick="changeRoom()">Join</button>
+      </div>
+    </div>
+    <!-- Game -->
+    <div class="hud">
+      <div id="leaderboard">
+        <p>Leaderboard</p>
+        <p id="score"></p>
+      </div>
+      <div id="life"></div>
+    </div>
+    <canvas id="game" width="0px" height="0px" style="background-color: #000;border:1px solid black;"></canvas>
+    <!--build:js js/client/class.min.js -->
+    <script src="js/client/Entity.js"></script>
+    <script src="js/share/Map.js"></script>
+    <script src="js/client/Map.js"></script>
+    <script src="js/client/Ghost.js"></script>
+    <script src="js/client/Player.js"></script>
+    <script src="js/client/Item.js"></script>
+    <!-- endbuild -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!--build:js js/client/main.min.js -->
+    <script src="js/client/function.js"></script>
+    <script src="js/client/config.js"></script>
+    <script src="js/client/touch.js"></script>
+    <script src="/js/client/socket.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
